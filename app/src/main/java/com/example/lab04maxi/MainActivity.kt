@@ -17,9 +17,11 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.example.lab04maxi.ui.theme.Lab04MaxiTheme
 
 class MainActivity : ComponentActivity() {
@@ -44,8 +46,12 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
     // ✅ Estado para el checkbox
     var checked by remember { mutableStateOf(false) }
 
-    Column(modifier = modifier.padding(16.dp)) {
-        Text(text = "Hello $name!")
+    Column(modifier = modifier.padding(14.dp)) {
+        Text(text = "Hello PROFE!",
+            modifier = modifier.padding(18.dp),
+            color = Color.Red,
+            fontSize = 24.sp
+        )
 
         Button(onClick = { println("Botón presionado!") }) {
             Text("Presióname")
