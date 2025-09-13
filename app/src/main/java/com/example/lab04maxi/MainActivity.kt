@@ -54,8 +54,8 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
         // ✅ Imagen: asegúrate de tener goten.png en res/drawable
         Image(
             painter = painterResource(id = R.drawable.goten),
-            contentDescription = "MI IMAGEN",
-            modifier = Modifier.size(100.dp)
+            contentDescription = "MI IMAGEN - personal",
+            modifier = Modifier.size(180.dp)
         )
 
         Row(verticalAlignment = Alignment.CenterVertically) {
