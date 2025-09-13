@@ -40,33 +40,26 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    // ✅ Estado para el checkbox
-    var checked by remember { mutableStateOf(false) }
-
-    Column(modifier = modifier.padding(16.dp)) {
-        Text(text = "Hello $name!")
-
-        Button(onClick = { println("Botón presionado!") }) {
-            Text("Presióname")
-        }
-
-        // ✅ Imagen: asegúrate de tener goten.png en res/drawable
-        Image(
-            painter = painterResource(id = R.drawable.goten),
-            contentDescription = "MI IMAGEN",
-            modifier = Modifier.size(100.dp)
+fun ViewHolaCurso() {
+    Column(
+        modifier = Modifier
+            .fillMaxWith() // ⚠️ ERROR: debería ser fillMaxWidth()
+            .padding(16.dp),
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        Text(
+            text = "Welcome to the Course!",
+            fontSize = 28.sp,
+            fontWeight = FontWeigh.Bold // ⚠️ ERROR: debería ser FontWeight.Bold
         )
-
-        Row(verticalAlignment = Alignment.CenterVertically) {
-            Checkbox(
-                checked = checked,
-                onCheckedChange = { checked = it }
-            )
-            Text(text = if (checked) "Activo" else "Inactivo")
-        }
+        Spacer(modifier = Modifier.heigh(16.dp)) // ⚠️ ERROR: debería ser height
+        Text(
+            text = "Hello, Student!",
+            fontSize = 20.xD // ⚠️ ERROR: debería ser 20.sp
+        )
     }
 }
+
 
 @Preview(showBackground = true)
 @Composable
